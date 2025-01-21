@@ -1,0 +1,54 @@
+syntax = "proto3";
+
+package leea_agent_sdk;
+
+message Envelope {
+
+  enum MessageType {
+    AgentHello = 0;
+    ServerHello = 1;
+
+    ExecutionRequest = 100;
+    ExecutionResult = 101;
+    ExecutionLog = 102;
+
+    Error = 500;
+  }
+
+  MessageType Type = 1;
+  bytes Payload = 2;
+}
+
+message AgentHello {
+  string Name = 1;
+  string Description = 2;
+  string InputSchema = 3;
+  string OutputSchema = 4;
+}
+
+message ServerHello {}
+
+message Error {
+  string RequestID = 1;
+  string Message = 2;
+}
+
+message ExecutionRequest {
+  string RequestID = 1;
+  string AgentID = 2; // Agent that should be triggered
+  string Input = 3; // Should follow agent input schema
+  string Signature = 4;
+}
+
+message ExecutionLog {
+  string RequestID = 1;
+  string Message = 2;
+  string Signature = 3;
+}
+
+message ExecutionResult {
+  string RequestID = 1;
+  bool IsSuccessful = 2;
+  string Result = 3; // Should follow agent output schema
+}
+
