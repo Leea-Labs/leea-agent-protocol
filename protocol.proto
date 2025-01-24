@@ -17,6 +17,8 @@ message Envelope {
 
   MessageType Type = 1;
   bytes Payload = 2;
+  string PublicKey = 3;
+  string Signature = 4;
 }
 
 message AgentHello {
@@ -24,6 +26,8 @@ message AgentHello {
   string Description = 2;
   string InputSchema = 3;
   string OutputSchema = 4;
+
+  string PublicKey = 5;
 }
 
 message ServerHello {}
@@ -37,13 +41,11 @@ message ExecutionRequest {
   string RequestID = 1;
   string AgentID = 2; // Agent that should be triggered
   string Input = 3; // Should follow agent input schema
-  string Signature = 4;
 }
 
 message ExecutionLog {
   string RequestID = 1;
   string Message = 2;
-  string Signature = 3;
 }
 
 message ExecutionResult {
@@ -51,4 +53,3 @@ message ExecutionResult {
   bool IsSuccessful = 2;
   string Result = 3; // Should follow agent output schema
 }
-
