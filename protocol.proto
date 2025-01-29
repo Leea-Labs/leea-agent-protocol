@@ -17,8 +17,6 @@ message Envelope {
 
   MessageType Type = 1;
   bytes Payload = 2;
-  string PublicKey = 3;
-  string Signature = 4;
 }
 
 message AgentHello {
@@ -28,6 +26,7 @@ message AgentHello {
   string OutputSchema = 4;
 
   string PublicKey = 5;
+  string Signature = 6;
 }
 
 message ServerHello {}
