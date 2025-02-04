@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package leea_agent_sdk;
+package leea_agent_protocol;
 
 message Envelope {
 
