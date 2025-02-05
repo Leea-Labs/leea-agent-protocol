@@ -2,7 +2,6 @@ syntax = "proto3";
 
 package leea_agent_protocol;
 
-
 message Envelope {
 
   enum MessageType {
@@ -20,7 +19,6 @@ message Envelope {
   bytes Payload = 2;
 }
 
-
 message AgentHello {
   string Name = 1;
   string Description = 2;
@@ -30,13 +28,13 @@ message AgentHello {
   string PublicKey = 5;
   string Signature = 6;
 
-  enum AgentVisiblility {
-    Public = 0;
-    Private = 1;
-    Hidden = 2;
+  enum AgentVisibility {
+    public = 0;
+    private = 1;
+    hidden = 2;
   }
 
-  AgentVisiblility Visibility = 7;
+  AgentVisibility Visibility = 7;
 }
 
 message ServerHello {}
