@@ -31,10 +31,11 @@ message AgentHello {
   enum AgentVisibility {
     public = 0;
     private = 1;
-    hidden = 2;
   }
 
   AgentVisibility Visibility = 7;
+  string DisplayName = 8;
+  bytes Image = 9;
 }
 
 message ServerHello {}
