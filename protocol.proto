@@ -46,7 +46,9 @@ message Error {
 }
 
 message ExecutionRequest {
-  string RequestID = 1;
+  string SessionID = 1;
+  string RequestID = 2;
+  optional string ParentID = 3;
   string AgentID = 2; // Agent that should be triggered
   string Input = 3; // Should follow agent input schema
 }
