@@ -32,11 +32,11 @@ message AgentHello {
 
   enum AgentVisiblility {
     Public = 0;
-    Private = 0;
-    Hidden = 0;
+    Private = 1;
+    Hidden = 2;
   }
 
-  AgentVisiblility Visibility = 7 [default = Public];
+  AgentVisiblility Visibility = 7;
 }
 
 message ServerHello {}
