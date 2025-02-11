@@ -35,7 +35,7 @@ message AgentHello {
 
   AgentVisibility Visibility = 7;
   string DisplayName = 8;
-  optional bytes Image = 9;
+  optional bytes Avatar = 9;
 }
 
 message ServerHello {}
