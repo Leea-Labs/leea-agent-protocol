@@ -43,6 +43,7 @@ message ServerHello {}
 message Error {
   string RequestID = 1;
   string Message = 2;
+  string ErrorCode = 3;
 }
 
 message ExecutionRequest {
